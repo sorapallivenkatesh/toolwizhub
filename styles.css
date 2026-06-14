@@ -93,3 +93,40 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
 .btn--primary:hover { transform: translateY(-2px); background-position: 100% 0; box-shadow: 0 14px 36px rgba(232, 121, 249, 0.45); }
 .btn--ghost { color: var(--text); background: var(--glass); border: 1px solid var(--line-strong); }
 .btn--ghost:hover { transform: translateY(-2px); border-color: var(--c1); }
+
+/* ── Tools (bento) ────────────────────────────────── */
+.tools { padding: 30px 0; }
+.tools__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.tool {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 26px; border-radius: var(--r);
+  background: var(--glass); border: 1px solid var(--line);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.3s; position: relative; overflow: hidden;
+}
+.tool::after {
+  content: ""; position: absolute; inset: 0; border-radius: var(--r); padding: 1px; pointer-events: none;
+  background: var(--grad); opacity: 0;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; transition: opacity 0.3s;
+}
+a.tool:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(34, 211, 238, 0.14); }
+a.tool:hover::after { opacity: 0.7; }
+.tool__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.tool__icon {
+  width: 46px; height: 46px; border-radius: 13px; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--glass-2); border: 1px solid var(--line); color: var(--c1);
+}
+.tool__icon svg { width: 24px; height: 24px; }
+.tool__icon--soon { font-size: 24px; color: var(--faint); }
+.tool__tag {
+  font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); padding: 4px 9px; border-radius: 7px; background: var(--glass-2); border: 1px solid var(--line);
+}
+.tool__name { font-family: var(--display); font-size: 21px; font-weight: 700; }
+.tool__desc { color: var(--soft); font-size: 14.5px; flex: 1; }
+.tool__go { color: var(--c1); font-weight: 600; font-size: 14px; margin-top: 6px; }
+a.tool:hover .tool__go span { margin-left: 4px; }
+.tool--soon { border-style: dashed; border-color: var(--line-strong); background: transparent; }
+.tool--soon .tool__name, .tool--soon .tool__desc { color: var(--muted); }
