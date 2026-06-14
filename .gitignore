@@ -1,0 +1,27 @@
+# Claude Code local settings (per-machine tool permissions)
+.claude/
+
+CLAUDE.md
+
+# Cloudflare Wrangler
+.wrangler/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Node (if ever added)
+node_modules/
+
+# Backups / scratch
+*.bak
+_*test*/
+_m.html
