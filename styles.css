@@ -1,0 +1,46 @@
+/* ░░░ ToolWizHub — hub landing · dark glass / gradient-mesh theme ░░░ */
+
+:root {
+  --bg: #07070d;
+  --text: #f4f5fb;
+  --soft: #c2c6da;
+  --muted: #8087a0;
+  --faint: #5a6080;
+  --glass: rgba(255, 255, 255, 0.045);
+  --glass-2: rgba(255, 255, 255, 0.07);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --c1: #22d3ee; --c2: #818cf8; --c3: #e879f9;
+  --grad: linear-gradient(110deg, var(--c1), var(--c2) 55%, var(--c3));
+  --r: 22px; --r-pill: 999px;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --display: "Space Grotesk", var(--sans);
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  font-family: var(--sans); color: var(--text); background: var(--bg);
+  min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  position: relative; overflow-x: hidden;
+}
+/* animated gradient-mesh blobs */
+body::before, body::after {
+  content: ""; position: fixed; z-index: -1; border-radius: 50%; filter: blur(100px);
+  opacity: 0.5; pointer-events: none;
+}
+body::before { width: 55vw; height: 55vw; top: -16vw; right: -12vw;
+  background: radial-gradient(circle, rgba(34,211,238,.5), transparent 70%); animation: drift1 19s var(--ease) infinite alternate; }
+body::after { width: 50vw; height: 50vw; bottom: -18vw; left: -12vw;
+  background: radial-gradient(circle, rgba(232,121,249,.42), transparent 70%); animation: drift2 23s var(--ease) infinite alternate; }
+@keyframes drift1 { to { transform: translate(-8vw, 10vw) scale(1.15); } }
+@keyframes drift2 { to { transform: translate(8vw, -8vw) scale(1.1); } }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.section__title { font-family: var(--display); font-size: clamp(22px, 3vw, 30px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 26px; }
