@@ -130,3 +130,14 @@ a.tool:hover::after { opacity: 0.7; }
 a.tool:hover .tool__go span { margin-left: 4px; }
 .tool--soon { border-style: dashed; border-color: var(--line-strong); background: transparent; }
 .tool--soon .tool__name, .tool--soon .tool__desc { color: var(--muted); }
+
+/* ── Why ──────────────────────────────────────────── */
+.why { padding: clamp(60px, 9vw, 100px) 0 40px; }
+.why__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.feature {
+  padding: 22px; border-radius: var(--r); background: var(--glass); border: 1px solid var(--line);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.feature__icon { font-size: 26px; }
+.feature h3 { font-family: var(--display); font-size: 16px; font-weight: 600; margin: 12px 0 6px; }
+.feature p { color: var(--muted); font-size: 13.5px; line-height: 1.55; }
