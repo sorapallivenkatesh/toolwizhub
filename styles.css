@@ -141,3 +141,16 @@ a.tool:hover .tool__go span { margin-left: 4px; }
 .feature__icon { font-size: 26px; }
 .feature h3 { font-family: var(--display); font-size: 16px; font-weight: 600; margin: 12px 0 6px; }
 .feature p { color: var(--muted); font-size: 13.5px; line-height: 1.55; }
+
+/* ── Footer ───────────────────────────────────────── */
+.footer {
+  max-width: 1120px; margin: 60px auto 0; padding: 32px clamp(20px, 5vw, 56px) 48px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.footer__brand img { height: 24px; width: auto; display: block; }
+.footer__brand p { color: var(--muted); font-size: 13px; margin-top: 8px; }
+.footer__links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer__links a { color: var(--soft); font-size: 14px; transition: color 0.15s; }
+.footer__links a:hover { color: var(--c1); }
+.footer__copy { color: var(--faint); font-size: 13px; font-family: var(--mono); }
