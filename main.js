@@ -21,3 +21,18 @@
   el.addEventListener("click", dismiss);
   setTimeout(dismiss, hold);
 })();
+
+/* ── Mobile nav toggle ────────────────────────────── */
+(function nav() {
+  const navEl = document.getElementById("nav");
+  const toggle = document.getElementById("nav-toggle");
+  const links = document.getElementById("nav-links");
+  if (!navEl || !toggle || !links) return;
+
+  const close = () => { navEl.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); };
+  toggle.addEventListener("click", () => {
+    const open = navEl.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+  links.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+})();
