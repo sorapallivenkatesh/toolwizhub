@@ -126,6 +126,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
 .tool--cyan    { --a: #22d3ee; --a2: #38bdf8; }
 .tool--emerald { --a: #34d399; --a2: #22d3ee; }
 .tool--violet  { --a: #a78bfa; --a2: #818cf8; }
+.tool--fuchsia { --a: #e879f9; --a2: #c084fc; }
 
 /* gradient hairline border on hover */
 .tool::after {
